@@ -1,0 +1,12 @@
+﻿生成启动时间为 2019/10/28 23:07:28。
+     1>项目“F:\Visual studio 2013编程\代码文件\test_2019_10_28_1506\test_2019_10_28_1506\test_2019_10_28_1506.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\Visual studio 2013编程\VC\bin\CL.exe /c /I"F:\Visual studio 2013编程\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         test.cpp
+     1>f:\visual studio 2013编程\代码文件\test_2019_10_28_1506\test_2019_10_28_1506\test.cpp(103): error C2148: 数组的总大小不得超过 0x7fffffff 字节
+     1>f:\visual studio 2013编程\代码文件\test_2019_10_28_1506\test_2019_10_28_1506\test.cpp(103): error C2512: “num”: 没有合适的默认构造函数可用
+     1>已完成生成项目“F:\Visual studio 2013编程\代码文件\test_2019_10_28_1506\test_2019_10_28_1506\test_2019_10_28_1506.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.56
