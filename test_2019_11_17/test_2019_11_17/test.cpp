@@ -2,6 +2,57 @@
 #include<iostream>
 using namespace std;
 
+#include<iostream>
+using namespace std;
+#include<string>
+#include<vector>
+int main()
+{
+	int n;
+	cin >> n;
+	vector<string> v;
+	v.resize(n);
+	for (auto& str : v)
+	{
+		cin >> str;
+	}
+	bool lon = true;
+	bool dic = true;
+	for (int i = 1; i < v.size(); ++i)
+	{
+		if (v[i].size() < v[i - 1].size())
+		{
+			lon = false;
+			break;
+		}
+	}
+	for (int i = 1; i < v.size(); ++i)
+	{
+		if (v[i] < v[i - 1])
+		{
+			dic = false;
+			break;
+		}
+	}
+	if (dic && lon)
+	{
+		cout << "both" << endl;
+	}
+	else if (dic && !lon)
+	{
+		cout << "lexicographically" << endl;
+	}
+	else if (!dic && lon)
+	{
+		cout << "lengths" << endl;
+	}
+	else
+	{
+		cout << "none" << endl;
+	}
+	return 0;
+}
+
 class LCA {
 public:
 	int getLCA(int a, int b)
