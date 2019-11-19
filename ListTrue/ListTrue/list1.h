@@ -16,27 +16,28 @@ struct ListNode//结点类
 	ListNode<T>* _next;
 };
 
-template <class T>
-struct ListIterator
+template <class T, class Ref, class Ptr>//模板有三个类，T是为了定义下面的Node
+struct ListIterator                 //Ref和Ptr是为了在List中定义const迭代器和普通迭代器时可以灵活变换T&和T*前面是否有const
 {
 	typedef ListNode<T> Node;
 	typedef Node* pNode;
-	typedef ListIterator<T> Self;//Self为本身这个类的类型
+	typedef ListIterator<T, Ref, Ptr> Self;//Self为本身这个类的类型
 
 	ListIterator(const pNode node)
 		:_node(node)
 	{
 	}
 
-	T& operator*()
+	Ref operator*()
 	{
 		return _node->_data;
 	}
-	
-	T* operator->()
+
+	Ptr operator->()
 	{
 		return &(_node->_data);
 	}
+
 	//迭代器前置++
 	Self& operator++()
 	{
@@ -83,7 +84,9 @@ class List
 public:
 	typedef ListNode<T> Node;
 	typedef Node* pNode;
-	typedef ListIterator<T> iterator;
+	typedef ListIterator<T, T&, T*> iterator;
+	typedef ListIterator<T, const T&, const T*> const_iterator;//定义const迭代器时，将引用和指针设置为const
+
 	List()
 	{
 		CreateHead();
@@ -118,7 +121,7 @@ public:
 
 	List<T>& operator=(List<T> lst)//传的是值，所以在传值的时候会隐式调用拷贝构造出一个深拷贝的lst
 	{                           //所以只需交换head即可
-		swap(_head,lst._head);
+		swap(_head, lst._head);
 		return *this;
 	}
 
@@ -149,7 +152,7 @@ public:
 		Insert(begin(), value);
 	}
 
-	void Insert(iterator pos,const T& value)//prev -- pos -- next
+	void Insert(iterator pos, const T& value)//prev -- pos -- next
 	{                                   //          
 		//创建结点
 		pNode newnode = new Node(value);
@@ -163,7 +166,7 @@ public:
 
 	iterator Erase(iterator pos)//prev -- pos -- next
 	{
-		if (pos._node != _head )
+		if (pos._node != _head)
 		{
 			//将pos的前后指向保留
 			pNode prev = pos._node->_prev;
@@ -208,16 +211,57 @@ public:
 		return iterator(_head);
 	}
 
+	const_iterator begin()const
+	{
+		return const_iterator(_head->_next);
+	}
+
+	const_iterator end()const
+	{
+		return const_iterator(_head);
+	}
+
+	/*void PrintList()    // 通过访问私有成员head来访问其中的data成员
+	{
+	pNode cur = _head->_next;
+	while (cur != _head)
+	{
+	cout << cur->_data << ' ';
+	cur = cur->_next;
+	}
+	cout << endl;
+	}*/
+
+	//void PrintList()    //用迭代器来访问data成员
+	//{
+	//	iterator it = begin();
+	//	while (it != end())
+	//	{
+	//		cout << *it << ' ';
+	//		++it;
+	//	}
+	//	cout << endl;
+	//}
+
+	void PrintList()
+	{
+		for (const auto& e : *this)
+		{
+			cout << e << ' ';
+		}
+		cout << endl;
+	}
+
 	size_t Size()
 	{
 		size_t count = 0;
 		/*pNode cur = _head->_next;
 		while (cur != _head)
 		{
-			cur = cur->_next;
-			++count;
+		cur = cur->_next;
+		++count;
 		}*/
-		for (const auto& e : *this)
+		for (const auto& e : *this)//用范围for来计数
 		{
 			++count;
 		}
