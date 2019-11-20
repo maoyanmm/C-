@@ -1,5 +1,8 @@
+#define D_SCL_SECURE_NO_WARNINGS
 #include<iostream>
+using namespace std;
 #include<string>
+#include<string.h>
 #include<stack>
 
 using namespace std;
@@ -77,7 +80,7 @@ int main()
 				if (tmpa % i == 0)
 				{
 					if (tmpa + i <= b)//如果约数+a比b小，就更新a、i、并且把这两个入栈
-					{             
+					{
 						sti.push(i);
 						tmpa += i;
 						i = tmpa - 1;
@@ -120,3 +123,77 @@ int main()
 	}
 	return 0;
 }
+
+class Solution {
+public:
+	bool IsPopOrder(vector<int> pushV, vector<int> popV) {
+		if (pushV.size() != popV.size())
+		{
+			return false;
+		}
+		stack<int> st;
+		int i = 0;
+		int j = 0;
+		while (j < popV.size())
+		{
+			if (st.empty() || st.top() != popV[j])
+			{
+				if (i == pushV.size())
+				{
+					return false;
+				}
+				st.push(pushV[i]);
+				++i;
+			}
+			else
+			{
+				st.pop();
+				++j;
+			}
+		}
+		return true;
+	}
+};
+
+class Solution {
+public:
+	int evalRPN(vector<string>& tokens)
+	{
+		stack<int> st;
+		for (const auto& e : tokens)
+		{
+			if (e == "+" || e == "-"
+				|| e == "*" || e == "/")
+			{
+				int right = st.top();
+				st.pop();
+				int left = st.top();
+				st.pop();
+				switch (e[0])
+				{
+				case '+':
+					st.push(left + right);
+					break;
+				case '-':
+					st.push(left - right);
+					break;
+				case '*':
+					st.push(left*right);
+					break;
+				case '/':
+					st.push(left / right);
+					break;
+				default:
+					break;
+				}
+			}
+			else
+			{
+				st.push(stoi(e));
+			}
+
+		}
+		return st.top();
+	}
+};
+
