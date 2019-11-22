@@ -126,7 +126,7 @@ public:
 			if (p->right == NULL || p->right == tmp)//如果没有右节点 或者 右节点已经访问过
 			{                                    //输入到数组、将标志更新、p置为空（为了不让p继续进行上面已经进行过的while
 				ans.push_back(p->val);
-				st.pop();
+				st.pop(); 
 				tmp = p;
 				p = NULL;
 			}
