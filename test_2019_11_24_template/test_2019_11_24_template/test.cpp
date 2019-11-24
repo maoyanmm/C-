@@ -1,24 +1,24 @@
 #include<iostream>
 using namespace std;
 
-//template<size_t N>
-//struct Sum
-//{
-//	enum{
-//		RET = N + Sum<N>::RET;
-//	};
-//};
-//
-//template<>
-//struct Sum<1>
-//{
-//
-//};
-//
-//int main()
-//{
-//
-//}
+template<size_t N>
+struct Sum
+{
+	enum{
+		RET = N + Sum<N>::RET;
+	};
+};
+
+template<>
+struct Sum<1>
+{
+
+};
+
+int main()
+{
+
+}
 
 #include<iostream>
 #include<string>
