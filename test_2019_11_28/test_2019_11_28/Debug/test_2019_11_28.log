@@ -1,13 +1,19 @@
-﻿生成启动时间为 2019/11/28 13:36:24。
-     1>项目“F:\Visual studio 2013编程\代码文件\test_2019_11_28\test_2019_11_28\test_2019_11_28.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/11/29 19:12:13。
+     1>项目“F:\Visual studio 2013编程\代码文件\C-Primer-Plus\test_2019_11_28\test_2019_11_28\test_2019_11_28.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          F:\Visual studio 2013编程\VC\bin\CL.exe /c /I"F:\Visual studio 2013编程\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+     1>cl : 命令行 warning D9028: 最小重新生成失败，正在转换为标准生成
          test.cpp
+     1>f:\visual studio 2013编程\代码文件\c-primer-plus\test_2019_11_28\test_2019_11_28\test.cpp(8): warning C4018: “<”: 有符号/无符号不匹配
+     1>f:\visual studio 2013编程\代码文件\c-primer-plus\test_2019_11_28\test_2019_11_28\test.cpp(13): warning C4554: “&”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+     1>f:\visual studio 2013编程\代码文件\c-primer-plus\test_2019_11_28\test_2019_11_28\test.cpp(19): warning C4018: “<”: 有符号/无符号不匹配
+     1>f:\visual studio 2013编程\代码文件\c-primer-plus\test_2019_11_28\test_2019_11_28\test.cpp(32): warning C4018: “<”: 有符号/无符号不匹配
+     1>f:\visual studio 2013编程\代码文件\c-primer-plus\test_2019_11_28\test_2019_11_28\test.cpp(36): warning C4018: “<”: 有符号/无符号不匹配
        Link:
-         F:\Visual studio 2013编程\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Visual studio 2013编程\代码文件\test_2019_11_28\Debug\test_2019_11_28.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Visual studio 2013编程\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Visual studio 2013编程\代码文件\test_2019_11_28\Debug\test_2019_11_28.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Visual studio 2013编程\代码文件\test_2019_11_28\Debug\test_2019_11_28.lib" /MACHINE:X86 Debug\test.obj
-         test_2019_11_28.vcxproj -> F:\Visual studio 2013编程\代码文件\test_2019_11_28\Debug\test_2019_11_28.exe
-     1>已完成生成项目“F:\Visual studio 2013编程\代码文件\test_2019_11_28\test_2019_11_28\test_2019_11_28.vcxproj”(Build 个目标)的操作。
+         F:\Visual studio 2013编程\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Visual studio 2013编程\代码文件\C-Primer-Plus\test_2019_11_28\Debug\test_2019_11_28.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Visual studio 2013编程\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Visual studio 2013编程\代码文件\C-Primer-Plus\test_2019_11_28\Debug\test_2019_11_28.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Visual studio 2013编程\代码文件\C-Primer-Plus\test_2019_11_28\Debug\test_2019_11_28.lib" /MACHINE:X86 Debug\test.obj
+         test_2019_11_28.vcxproj -> F:\Visual studio 2013编程\代码文件\C-Primer-Plus\test_2019_11_28\Debug\test_2019_11_28.exe
+     1>已完成生成项目“F:\Visual studio 2013编程\代码文件\C-Primer-Plus\test_2019_11_28\test_2019_11_28\test_2019_11_28.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.30
+已用时间 00:00:01.60
