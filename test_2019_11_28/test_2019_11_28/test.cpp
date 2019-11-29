@@ -10,9 +10,10 @@ using namespace std;
 			ans = ans ^ nums[i];
 		}
 		int flag = 0;
-		while ((ans >> flag) & 1 != 1)
+		while (((ans >> flag)&1) != 1)
 		{
 			++flag;
+			/*ans = ans >> flag;*/
 		}
 		vector<int> ans1;
 		vector<int> ans2;
@@ -45,7 +46,6 @@ using namespace std;
 
 	int main()
 	{
-		
 		vector<int> nums;
 		nums.push_back(1);
 		nums.push_back(2);
@@ -59,7 +59,6 @@ using namespace std;
 			cout << result[i] << ' ';
 		}
 		cout << endl;
-
 		system("pause");
 		return 0;
 	}
