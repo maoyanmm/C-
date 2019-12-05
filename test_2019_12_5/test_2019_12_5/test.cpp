@@ -68,3 +68,70 @@ public:
 		return vv[row - 1][col - 1];
 	}
 };
+
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int row, col;
+//迷宫
+//路径
+//最优路径
+
+void Out_maze(vector<vector<int>>& maze, vector<vector<int>>& maze_tmp, vector<vector<int>>& maze_best, int i, int j)
+{
+	maze[i][j] = 1;
+	maze_tmp.push_back({ i, j });
+	if (i == row - 1 && j == col - 1)
+	{
+		if (maze_best.empty() || maze_tmp.size() < maze_best.size())
+		{
+			maze_best = maze_tmp;
+		}
+	}
+	if (i - 1 >= 0 && maze[i - 1][j] == 0)//如果上可以走
+	{
+		Out_maze(maze, maze_tmp, maze_best, i - 1, j);
+	}
+	if (i + 1 < row && maze[i + 1][j] == 0)//如果下可以走
+	{
+		Out_maze(maze, maze_tmp, maze_best, i + 1, j);
+	}
+	if (j - 1 >= 0 && maze[i][j - 1] == 0)//如果左可以走
+	{
+		Out_maze(maze, maze_tmp, maze_best, i, j - 1);
+	}
+	if (j + 1 < col && maze[i][j + 1] == 0)//如果右可以走
+	{
+		Out_maze(maze, maze_tmp, maze_best, i, j + 1);
+	}
+	maze[i][j] = 0;
+	maze_tmp.pop_back();
+}
+
+int main()
+{
+	while (cin >> row >> col)
+	{
+		//输入迷宫
+		vector<vector<int>> maze(row, vector<int>(col, 0));
+		vector<vector<int>> maze_tmp;
+		vector<vector<int>> maze_best;
+		//maze_tmp.clear();
+		//maze_best.clear();
+		for (auto& i : maze)
+		{
+			for (auto& j : i)
+			{
+				cin >> j;
+			}
+		}
+		Out_maze(maze, maze_tmp, maze_best, 0, 0);
+		for (auto& i : maze_best)
+		{
+			cout << '(' << i[0] << ',' << i[1] << ')' << endl;
+		}
+	}
+	return 0;
+}
