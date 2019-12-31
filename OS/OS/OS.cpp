@@ -15,7 +15,7 @@ int main()
 	vector<int> service_time;
 	int flag = 0;
 	while (1)
-	{
+	{ 
 		int time;
 		cin >> time;
 		if (0 == flag && time >= 0)
